@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Future Academy</title>
+  
+  
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="index.html">Bright Future Academy</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+      <li class="nav-item"><a class="nav-link" href="courses.html">Our Courses</a></li>
+      <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+    </ul>
+  </div>
+</nav>
+<section id="achievements" class="py-5 text-center d-flex align-items-center bg-white" 
+  style=" min-height:100vh;">
+  <div class="container">
+  
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">Achievements</h2>
+      <div style="width:80px; height:3px; background:#0d6efd; margin:10px auto;"></div>
+    </div>
+    
+
+    
+    <div class="d-flex justify-content-center flex-wrap gap-4 mt-4">
+      
+     
+      <div class="p-4 rounded shadow bg-primary text-white" style="width:220px;">
+        <i class="bi bi-book fs-1 mb-2"></i>
+        <h3 class="fw-bold counter" data-target="10">0</h3>
+        <p class="mb-0">Courses</p>
+      </div>
+
+        <div class="p-4 rounded shadow bg-success text-white" style="width:220px;">
+        <i class="bi bi-people-fill fs-1 mb-2"></i>
+        <h3 class="fw-bold counter" data-target="500">0</h3>
+        <p class="mb-0">Enrolled Students</p>
+      </div>
+
+     
+      <div class="p-4 rounded shadow bg-danger text-white" style="width:220px;">
+        <i class="bi bi-mortarboard-fill fs-1 mb-2"></i>
+        <h3 class="fw-bold counter" data-target="200">0</h3>
+        <p class="mb-0">Graduates</p>
+      </div>
+
+      
+      <div class="p-4 rounded shadow bg-warning text-dark" style="width:220px;">
+        <i class="bi bi-lightbulb-fill fs-1 mb-2"></i>
+        <h3 class="fw-bold counter" data-target="50">0</h3>
+        <p class="mb-0">Mentors</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const counters = document.querySelectorAll('.counter');
+  let started = false;
+
+  function animateCounters() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const updateCount = () => {
+        const count = +counter.innerText;
+        const increment = target / 100;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = '+' + target;
+        }
+      };
+      updateCount();
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const section = document.querySelector('#achievements');
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (!started && sectionTop < windowHeight - 100) {
+      started = true;
+      animateCounters();
+    }
+  });
+});
+</script>
+
+<section class="py-5 bg-white">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-dark">What Students Say</h2>
+      <div style="width:80px; height:3px; background:#0d6efd; margin:10px auto;"></div>
+    </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light shadow-sm rounded h-100">
+          <p class="text-muted">“A wonderful place to learn and grow. The teachers are amazing.”</p>
+          <h6 class="fw-bold mt-3 text-primary">— Yalda Nabizada</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light shadow-sm rounded h-100">
+          <p class="text-muted">“I gained confidence and improved my skills more than I expected.”</p>
+          <h6 class="fw-bold mt-3 text-primary">— Sara Habibi</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light shadow-sm rounded h-100">
+          <p class="text-muted">“A friendly environment that motivates you to keep learning.”</p>
+          <h6 class="fw-bold mt-3 text-primary">— Sahar Amiri</h6>
+        </div>
+      </div>
+      
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light shadow-sm rounded h-100">
+          <p class="text-muted">“The teachers explain clearly and make learning feel easy and enjoyable.”</p>
+          <h6 class="fw-bold mt-3 text-primary">— Miral Neda</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light shadow-sm rounded h-100">
+          <p class="text-muted">“The classes are well-organized and environment is very positive..”</p>
+          <h6 class="fw-bold mt-3 text-primary">— Roya Rabani</h6>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light shadow-sm rounded h-100">
+          <p class="text-muted">“I feel more cofident now because the mentors guide us with real support.”</p>
+          <h6 class="fw-bold mt-3 text-primary">— Zainab Hakimi</h6>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-light pt-5 pb-4">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Bright Future Academy</h5>
+        <p style="font-size:14px;">A place where learning becomes inspiring.</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Explore</h5>
+        <ul class="list-unstyled" style="font-size:14px; line-height:2;">
+          <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+          <li><a href="courses.html" class="text-light text-decoration-none">Programs</a></li>
+          <li><a href="register.html" class="text-light text-decoration-none">Join Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold mb-3">Connect</h5>
+        <a href="#" class="text-light fs-4 me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-light fs-4 me-3"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-light fs-4"><i class="bi bi-whatsapp"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="text-center" style="font-size:14px;">
+      © 2026 Bright Future Academy. All rights reserved.
+    </div>
+
+  </div>
+</footer>
